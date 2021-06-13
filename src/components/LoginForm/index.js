@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { func } from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-// import { Form, Button, Input } from './style';
+import { Container, Form, Button, Input } from './style';
 import { saveUserEmail } from '../../actions';
 
 const verifyInputs = (email, password) => {
@@ -29,37 +29,39 @@ const LoginForm = ({ saveEmail }) => {
   });
 
   return (
-    <form
-      onSubmit={ (e) => {
-        e.preventDefault();
-        saveEmail(email);
-        setShouldRedirect(true);
-      } }
-    >
-      <input
-        type="email"
-        placeholder="Email:"
-        data-testid="email-input"
-        onChange={ ({ target }) => setEmail(target.value) }
-        value={ email }
-      />
-      <input
-        type="password"
-        placeholder="Senha:"
-        data-testid="password-input"
-        onChange={ ({ target }) => setPassword(target.value) }
-        value={ password }
-      />
-
-      <button
-        type="submit"
-        disabled
+    <Container>
+      <Form
+        onSubmit={ (e) => {
+          e.preventDefault();
+          saveEmail(email);
+          setShouldRedirect(true);
+        } }
       >
-        Entrar
-      </button>
+        <Input
+          type="email"
+          placeholder="Email:"
+          data-testid="email-input"
+          onChange={ ({ target }) => setEmail(target.value) }
+          value={ email }
+        />
+        <Input
+          type="password"
+          placeholder="Senha:"
+          data-testid="password-input"
+          onChange={ ({ target }) => setPassword(target.value) }
+          value={ password }
+        />
 
-      {shouldRedirect && <Redirect to="/carteira" />}
-    </form>
+        <Button
+          type="submit"
+          disabled
+        >
+          Entrar
+        </Button>
+
+        {shouldRedirect && <Redirect to="/carteira" />}
+      </Form>
+    </Container>
   );
 };
 

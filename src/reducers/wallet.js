@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import {
   REQUEST_CURRENCY,
   RECEIVE_CURRENCY,
@@ -5,6 +6,7 @@ import {
   DELETE_EXPENSE,
   EDIT_EXPENSE,
   EDITED_EXPENSE,
+  RENDER_EXPENSE_FORM,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -14,6 +16,7 @@ const INITIAL_STATE = {
   tags: ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'],
   editMode: false,
   editID: '',
+  shouldExpenseFormRender: false,
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -32,6 +35,7 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses, action.payload],
+      shouldExpenseFormRender: false,
     };
 
   case DELETE_EXPENSE:
@@ -44,6 +48,7 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       editMode: true,
+      shouldExpenseFormRender: true,
       editID: action.payload,
     };
 
@@ -59,8 +64,15 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       ],
       editID: '',
       editMode: false,
+      shouldExpenseFormRender: false,
     };
   }
+
+  case RENDER_EXPENSE_FORM:
+    return {
+      ...state,
+      shouldExpenseFormRender: action.payload,
+    };
   default:
     return state;
   }

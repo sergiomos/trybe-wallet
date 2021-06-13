@@ -6,7 +6,7 @@ import { addExpense, fetchCurrencies, getCurrenciesCode } from '../../actions';
 import ExpenseForm from '../ExpenseForm';
 // import { Form, Label, input, Select, Option } from './style';
 
-const handleSubmit = async (e, expense, dispatch, expenses) => {
+const handleSubmit = async (e, expense, dispatch, expenses, setExpense) => {
   e.preventDefault();
   dispatch(addExpense({
     id: expenses.length,
@@ -16,7 +16,11 @@ const handleSubmit = async (e, expense, dispatch, expenses) => {
 };
 
 const AddExpenseForm = () => {
-  const [expense, setExpense] = useState({});
+  const [expense, setExpense] = useState({
+    method: 'Dinheiro',
+    currency: 'USD',
+    tag: 'Alimentação',
+  });
 
   const { currencies, expenses, tags, methods } = useSelector(({ wallet }) => wallet);
   const dispatch = useDispatch();
@@ -35,6 +39,7 @@ const AddExpenseForm = () => {
       tags={ tags }
       onSubmit={ (e) => handleSubmit(e, expense, dispatch, expenses) }
       button="Adicionar despesa"
+      btnColor="#FF9292"
     />
   );
 };

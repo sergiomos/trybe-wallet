@@ -1,11 +1,12 @@
 import React from 'react';
 import { func, string } from 'prop-types';
+import { Label, Input } from './style';
 
 function TextInput({ label, onChange, value, name }) {
   return (
-    <label htmlFor={ name }>
-      {`${label}:`}
-      <input
+    <Label htmlFor={ name }>
+      {`${label}`}
+      <Input
         type="text"
         id={ name }
         name={ name }
@@ -13,7 +14,7 @@ function TextInput({ label, onChange, value, name }) {
         value={ value }
         data-testid={ `${name}-input` }
       />
-    </label>
+    </Label>
   );
 }
 

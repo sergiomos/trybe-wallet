@@ -32,6 +32,7 @@ const EditExpenseForm = () => {
       tags={ tags }
       onSubmit={ (e) => handleSubmit(e, expense, dispatch) }
       button="Editar despesa"
+      btnColor="#F7D664"
     />
   );
 };

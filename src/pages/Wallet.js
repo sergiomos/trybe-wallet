@@ -1,20 +1,26 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { renderExpenseForm } from '../actions';
 import AddExpenseForm from '../components/AddExpenseForm';
 import EditExpenseForm from '../components/EditExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
 import Header from '../components/Header';
+import { Container, Main, AddButton } from './styles/wallet';
 
 const Wallet = () => {
   const globalState = useSelector((store) => store);
   const { editMode } = globalState.wallet;
+  const dispatch = useDispatch();
 
   return (
-    <div>
+    <Container>
       <Header />
-      {editMode ? <EditExpenseForm /> : <AddExpenseForm />}
-      <ExpenseTable />
-    </div>
+      <Main>
+        {editMode ? <EditExpenseForm /> : <AddExpenseForm />}
+        <ExpenseTable />
+        <AddButton onClick={ () => dispatch(renderExpenseForm(true)) }>Add</AddButton>
+      </Main>
+    </Container>
   );
 };
 

@@ -5,6 +5,7 @@ export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const EDITED_EXPENSE = 'EDITED_EXPENSE';
+export const RENDER_EXPENSE_FORM = 'RENDER_EXPENSE_FORM';
 
 export const saveUserEmail = (email) => ({
   type: SAVE_USER_EMAIL,
@@ -52,4 +53,9 @@ export const editExpense = (id) => ({
 export const editedExpense = (expense) => ({
   type: EDITED_EXPENSE,
   payload: expense,
+});
+
+export const renderExpenseForm = (payload) => ({
+  type: RENDER_EXPENSE_FORM,
+  payload,
 });

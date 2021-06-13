@@ -1,11 +1,12 @@
 import React from 'react';
 import { func, string } from 'prop-types';
+import { Label, Select } from './style';
 
 function SelectInput({ children, label, name, value, onChange }) {
   return (
-    <label htmlFor={ name }>
-      {`${label}:`}
-      <select
+    <Label htmlFor={ name }>
+      {`${label}`}
+      <Select
         name={ name }
         id={ name }
         value={ value }
@@ -13,8 +14,8 @@ function SelectInput({ children, label, name, value, onChange }) {
         onChange={ onChange }
       >
         {children}
-      </select>
-    </label>
+      </Select>
+    </Label>
   );
 }
 

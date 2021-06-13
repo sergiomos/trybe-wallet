@@ -1,42 +1,42 @@
 import React from 'react';
-import { arrayOf, func, object } from 'prop-types';
-import { connect } from 'react-redux';
-// import { Header as header, UserEmail, TotalDebits, Currency } from './style';
+import { useSelector } from 'react-redux';
+import { Container, Header, UserEmail, TotalDebits, Currency } from './style';
 
-export const WalletHeader = ({ userEmail, expenses }) => (
-  <header>
+export const WalletHeader = () => {
+  const { wallet, user } = useSelector((state) => state);
+  const { email: userEmail } = user;
+  const { expenses } = wallet;
 
-    <span data-testid="email-field">
-      { userEmail }
-    </span>
+  const totalExpenses = expenses.reduce((acc, actual) => {
+    const { value, currency, exchangeRates } = actual;
+    const exchangeRate = exchangeRates[currency].ask;
+    return acc + Number(value) * Number(exchangeRate);
+  }, 0).toFixed(2);
 
-    <span data-testid="total-field">
-      {expenses.reduce((acc, actual) => {
-        const { value, currency, exchangeRates } = actual;
-        const exchangeRate = exchangeRates[currency].ask;
-        return acc + Number(value) * Number(exchangeRate);
-      }, 0).toFixed(2)}
+  return (
+    <Container>
+      <Header>
 
-    </span>
+        <UserEmail data-testid="email-field">
+          <img src="https://source.unsplash.com/random" alt="user profile" />
+          <p>{ userEmail }</p>
+        </UserEmail>
 
-    <span data-testid="header-currency-field">
-      BRL
-    </span>
-  </header>
-);
+        <div>
 
-WalletHeader.propTypes = {
-  userEmail: func,
-  expenses: arrayOf(object),
-}.isRequired;
+          <Currency data-testid="header-currency-field">
+            BRL
+          </Currency>
 
-const mapStateToProps = ({ user, wallet }) => ({
-  userEmail: user.email,
-  expenses: wallet.expenses,
-});
+          <TotalDebits data-testid="total-field">
+            R$
+            {totalExpenses}
+          </TotalDebits>
+        </div>
 
-// const mapDispatchToProps = (dispatch) => ({
+      </Header>
+    </Container>
+  );
+};
 
-// });
-
-export default connect(mapStateToProps)(WalletHeader);
+export default WalletHeader;

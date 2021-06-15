@@ -21,7 +21,7 @@ export const UserEmail = styled.span`
   justify-content: center;
   gap: 10px;
 
-  color: #252525;
+  color: #fafafa;
   font-weight: 700;
   font-size: 16px;
 

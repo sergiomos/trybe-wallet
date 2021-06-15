@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   padding: 80px 40px;
-  background-color: rgba(37, 37, 37, 0.05);
+  background-color: rgba(25, 25, 35, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,11 +25,12 @@ export const Input = styled.input`
   font-size: 16px;
   font-weight: 700;
   border: none;
-  border-bottom: 0.1rem solid #252525;
+  border-bottom: 0.2rem solid #fafafa;
   transition: 0.5s;
+  color: #252525;
 
   &:hover {
-    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 1px 4px rgba(30, 30, 30, 0.25);
   }
 `;
 

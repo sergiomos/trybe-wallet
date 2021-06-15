@@ -37,17 +37,6 @@ const EditExpenseForm = () => {
   );
 };
 
-// const mapStateToProps = ({ wallet }) => ({
-//   currencies: wallet.currencies,
-//   expenses: wallet.expenses,
-//   editID: wallet.editID,
-// });
-
-// const mapDispatchToProps = (dispatch) => ({
-//   fetchCurrencies: () => dispatch(fetchCurrency()),
-//   editExpense: (expense) => dispatch(editedExpense(expense)),
-// });
-
 export default EditExpenseForm;
 
 EditExpenseForm.propTypes = {

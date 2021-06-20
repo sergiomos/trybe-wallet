@@ -28,53 +28,18 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Trybe Wallet</h3>
+  <h1 align="center">Trybe Wallet</h1>
 
   <p align="center">
     An application to control your expenses
-    <br />
-    <a href="https://github.com/sergiomos/trybe-wallet"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/sergiomos/trybe-wallet">View Demo</a>
-    ·
-    <a href="https://github.com/sergiomos/trybe-wallet/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/sergiomos/trybe-wallet/issues">Request Feature</a>
   </p>
 </p>
-
-
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<video width="100%" height="480" controls>
-  <source src="./demo.mp4" type="video/mp4">
-</video>
+
+https://user-images.githubusercontent.com/39865942/122660305-d4a66780-d156-11eb-9e2f-7679422af87e.mp4
 
 
 ### Built With

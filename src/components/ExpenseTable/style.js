@@ -14,7 +14,7 @@ export const Table = styled.table`
 `;
 
 export const Thead = styled.thead`
-  background-color: #F6D14E;
+  background-color: #757575;
   color: #fafafa;
 `;
 
